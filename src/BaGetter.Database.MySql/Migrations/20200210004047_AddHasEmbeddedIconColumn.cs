@@ -1,6 +1,7 @@
-﻿using System;
+using System;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
+using MySql.EntityFrameworkCore.Metadata;
 
 namespace BaGetter.Database.MySql.Migrations;
 
@@ -15,7 +16,7 @@ public partial class AddHasEmbeddedIconColumn : Migration
             nullable: true,
             oldClrType: typeof(DateTime),
             oldNullable: true)
-            .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.ComputedColumn);
+            .Annotation("MySql:ValueGenerationStrategy", MySQLValueGenerationStrategy.ComputedColumn);
 
         migrationBuilder.AddColumn<bool>(
             name: "HasEmbeddedIcon",
@@ -37,6 +38,6 @@ public partial class AddHasEmbeddedIconColumn : Migration
             oldClrType: typeof(DateTime),
             oldRowVersion: true,
             oldNullable: true)
-            .OldAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.ComputedColumn);
+            .OldAnnotation("MySql:ValueGenerationStrategy", MySQLValueGenerationStrategy.ComputedColumn);
     }
 }

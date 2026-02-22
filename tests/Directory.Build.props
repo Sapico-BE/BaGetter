@@ -4,7 +4,7 @@
     <LangVersion>latest</LangVersion>
     <IsPackable>false</IsPackable>
     <IsPublishable>false</IsPublishable>
-  </PropertyGroup>
+    </PropertyGroup>
 
   <PropertyGroup>
     <DebugType>portable</DebugType>
