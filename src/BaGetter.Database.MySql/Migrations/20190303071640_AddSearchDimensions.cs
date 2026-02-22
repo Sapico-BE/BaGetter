@@ -1,6 +1,7 @@
 using System;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
+using MySql.EntityFrameworkCore.Metadata;
 
 namespace BaGetter.Database.MySql.Migrations;
 
@@ -43,7 +44,7 @@ public partial class AddSearchDimensions : Migration
             columns: table => new
             {
                 Key = table.Column<int>(nullable: false)
-                    .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    .Annotation("MySql:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                 Name = table.Column<string>(maxLength: 512, nullable: true),
                 Version = table.Column<string>(maxLength: 64, nullable: true),
                 PackageKey = table.Column<int>(nullable: false)
@@ -64,7 +65,7 @@ public partial class AddSearchDimensions : Migration
             columns: table => new
             {
                 Key = table.Column<int>(nullable: false)
-                    .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    .Annotation("MySql:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                 Moniker = table.Column<string>(maxLength: 256, nullable: true),
                 PackageKey = table.Column<int>(nullable: false)
             },

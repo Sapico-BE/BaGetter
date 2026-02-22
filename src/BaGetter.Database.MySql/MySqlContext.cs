@@ -1,7 +1,7 @@
 using BaGetter.Core;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
-using MySqlConnector;
+using MySql.Data.MySqlClient;
 
 namespace BaGetter.Database.MySql;
 
@@ -33,15 +33,12 @@ public class MySqlContext : AbstractContext<MySqlContext>
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        // Use the latin1 charset as default instead of the utf8mb4 to prevent the "Row size too large" error.
-        modelBuilder.HasCharSet("latin1");
-
         base.OnModelCreating(modelBuilder);
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         if(!optionsBuilder.IsConfigured)
-            optionsBuilder.UseMySql(_bagetterOptions.ConnectionString, ServerVersion.AutoDetect(_bagetterOptions.ConnectionString));
+            optionsBuilder.UseMySQL(_bagetterOptions.ConnectionString);
     }
 }

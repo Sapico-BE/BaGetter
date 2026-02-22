@@ -1,6 +1,7 @@
-﻿using System;
+using System;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
+using MySql.EntityFrameworkCore.Metadata;
 
 #nullable disable
 
@@ -136,7 +137,7 @@ public partial class UseCharSetLatin1 : Migration
             oldType: "timestamp(6)",
             oldRowVersion: true,
             oldNullable: true)
-            .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.ComputedColumn);
+            .Annotation("MySql:ValueGenerationStrategy", MySQLValueGenerationStrategy.ComputedColumn);
 
         migrationBuilder.AlterColumn<string>(
             name: "RepositoryUrl",
@@ -458,7 +459,7 @@ public partial class UseCharSetLatin1 : Migration
             oldType: "timestamp(6)",
             oldRowVersion: true,
             oldNullable: true)
-            .OldAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.ComputedColumn);
+            .OldAnnotation("MySql:ValueGenerationStrategy", MySQLValueGenerationStrategy.ComputedColumn);
 
         migrationBuilder.AlterColumn<string>(
             name: "RepositoryUrl",
